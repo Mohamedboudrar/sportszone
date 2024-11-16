@@ -25,38 +25,23 @@ Before you begin, ensure you have the following installed:
 Clone this repository to your local machine:
 
 git clone https://github.com/your-username/private-jets-reservation.git
-Step 2: Set Up the Database
-Open phpMyAdmin (typically accessible at http://localhost/phpmyadmin/).
 
-Create a new database:
 
-Name the database (e.g., private_jets_db).
-Choose utf8_general_ci as the collation (or the default collation for your version).
-Click "Create."
-Import the database file:
+### How to run WeFly using PHP and MySQL
+1. Download the project zip file
 
-In phpMyAdmin, click on the database you just created (e.g., private_jets_db).
-Click on the Import tab.
-Click "Choose File" and select the database file (database.sql) found in this repository.
-Click "Go" to import the database structure and data.
-Step 3: Configure the Database Connection
-In the project directory, locate the config.php file (or a similarly named file for configuration).
-Open it and modify the database connection details to match your local environment:
-php
+2. Extract the file and copy bbs folder
 
-<?php
-$host = 'localhost';  // Database host
-$dbname = 'private_jets_db';  // Database name
-$username = 'root';  // Database username
-$password = '';  // Database password
-?>
-Step 4: Set Up the Web Server
-If you're using Apache, place the project folder in the htdocs directory (or the appropriate directory for your web server).
+3.Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/Html)
 
-Start the Apache server and MySQL service using XAMPP or WAMP (if you're using them).
-Navigate to http://localhost/ in your browser to see the project in action.
-Running the Project
-After setting up the database and web server, open your browser and navigate to http://localhost/private-jets-reservation (or the path where your project is stored).
+4.Open PHPMyAdmin (http://localhost/phpmyadmin)
+
+5. Create a database with the name  bbsdb
+
+6. Import bbsdb.sql file(given inside the zip package in SQL file folder)
+
+7. Run the script http://localhost/bbs
+
 You should now see the main landing page of the Private Jets Reservation System.
 You can start browsing the available jets, making reservations, and managing your bookings.
 Screenshots
