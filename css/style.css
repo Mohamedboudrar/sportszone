@@ -1181,6 +1181,7 @@ h1, h2, h3, h4, h5,
   border-right: 1px solid #efefef; }
 
 .header-top > .container {
+  
   padding-top: 40px;
   padding-bottom: 40px; }
 
@@ -1650,3 +1651,11 @@ h1, h2, h3, h4, h5,
   .testimony-39291 .text span {
     font-size: 14px;
     color: #ccc; }
+  .custom-image {
+    width: calc(100% - 300px); /* Adjust this value as needed */
+    max-width: 100%; /* Prevents it from exceeding the container */
+    height: auto; /* Maintains aspect ratio */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto; /* Centers the image horizontally */
+  }
+    

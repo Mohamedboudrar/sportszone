@@ -1224,6 +1224,8 @@
 	.wrap-icon-39293 {
 		position: relative;
 		margin-bottom: 20px;
+		display: flex; /* Use flexbox for centering */
+		align-items: center; /* Vertically center */
 		display: block;
 		&:before {
 			content: "";

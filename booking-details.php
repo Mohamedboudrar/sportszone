@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="en">
 
 <head>
-  <title>WeFly || Booking Status</title>
+  <title>SportsZone || Booking Status</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -57,75 +57,84 @@ include('includes/config.php');
 
 <div class="col-md-12">
 <table id="example1" class="table table-bordered table-striped">
-       
-                  <tbody>
-<?php $bid=base64_decode($_GET['bid']);
-$eml=base64_decode($_GET['eml']);
-$pno=base64_decode($_GET['pno']);
-$query=mysqli_query($con,"select tblbookings.*, tblboat.ID,tblboat.BoatName from tblbookings join tblboat on tblboat.ID=tblbookings.BoatID  where tblbookings.ID='$bid' and tblbookings.EmailId='$eml' and tblbookings.PhoneNumber='$pno'");
-$cnt=1;
-while($result=mysqli_fetch_array($query)){
-?>
+    <tbody>
+        <?php 
+        $bid = base64_decode($_GET['bid']);
+        $eml = base64_decode($_GET['eml']);
+        $pno = base64_decode($_GET['pno']);
+        $query = mysqli_query($con, "
+            SELECT tblbookings.*, tblboat.ID, tblboat.BoatName 
+            FROM tblbookings 
+            JOIN tblboat ON tblboat.ID = tblbookings.BoatID  
+            WHERE tblbookings.ID = '$bid' 
+            AND tblbookings.EmailId = '$eml' 
+            AND tblbookings.PhoneNumber = '$pno'
+        ");
+        $cnt = 1;
+        while ($result = mysqli_fetch_array($query)) {
+        ?>
 
+        <!-- Booking Number -->
+        <tr>
+            <th>Booking Number</th>
+            <td colspan="3"><?php echo $result['BookingNumber']; ?></td>
+        </tr>
 
-       <tr>
-                  <th>Booking Number</th>
-                    <td colspan="3"><?php echo $result['BookingNumber']?></td>
-                  </tr>
+        <!-- Name and Email -->
+        <tr>
+            <th>Name</th>
+            <td><?php echo $result['FullName']; ?></td>
+            <th>Email ID</th>
+            <td><?php echo $result['EmailId']; ?></td>
+        </tr>
 
-                  <tr>
-                  <th> Name</th>
-                    <td><?php echo $result['FullName']?></td>
-                    <th>Email Id</th>
-                   <td> <?php echo $result['EmailId']?></td>
-                  </tr>
-                  <tr>
-                    <th> Mobile No</th>
-                    <td><?php echo $result['PhoneNumber']?></td>
-                    <th>No of Peoples</th>
-                    <td><?php echo $result['NumnerofPeople']?></td>
-                  </tr>
-                  <tr>
-                    <th>Bookingd Date From - Bookingd Date To</th>
-                   <td><?php echo $result['BookingDateFrom']?> to  <?php echo $result['BookingDateTo']?></td>
-                   <th>Booking Time</th>
-                   <td><?php echo $result['BookingTime']?></td>
-                 </tr>
-                 <tr>
-                  <th>Posting Date</th>
-                    <td ><?php echo $result['postingDate']?></td>
-                    <th>Boat Name</th>
-                    <td ><?php echo $result['BoatName']?>  <a href='boat-details.php?bid=<?php echo $result['BoatID']; ?>' target="blank"> View Details</a></td>
-                  </tr>
+        <!-- Mobile Number and Number of People -->
+        <tr>
+            <th>Mobile Number</th>
+            <td><?php echo $result['PhoneNumber']; ?></td>
+            <th>Number of People</th>
+            <td><?php echo $result['NumnerofPeople']; ?></td>
+        </tr>
 
- 
+        <!-- Booking Date and Time -->
+        <tr>
+            <th>Booking Date</th>
+            <td><?php echo $result['BookingDate']; ?></td>
+            <th>Booking Time</th>
+            <td><?php echo $result['TimeFrom']; ?> to <?php echo $result['TimeTo']; ?></td>
+        </tr>
 
+        <!-- Boat Name -->
 
-            <tr>
-                  <th>Booking  Status</th>
-                    <td><?php if($result['BookingStatus']==''): ?>
-<span class="badge bg-warning text-dark">Not Processed Yet</span>
-                  <?php elseif($result['BookingStatus']=='Accepted'): ?>
+        <!-- Booking Status -->
+        <tr>
+            <th>Boat Name</th>
+              <td >
+                  <?php echo $result['BoatName']; ?> 
+                  <a href='zone-details.php?bid=<?php echo $result['BoatID']; ?>' target="_blank">View Details</a>
+              </td>
+            <th>Booking Status</th>
+            <td >
+                <?php if ($result['BookingStatus'] == ''): ?>
+                    <span class="badge bg-warning text-dark">Not Processed Yet</span>
+                <?php elseif ($result['BookingStatus'] == 'Accepted'): ?>
                     <span class="badge bg-success">Accepted</span>
-                    <?php elseif($result['BookingStatus']=='Rejected'): ?>
-                      <span class="badge bg-danger">Rejected</span>
-                    <?php endif;?></td>
-                    <th>Updation Date</th>
-                    <td><?php echo $result['UpdationDate']?></td>
-                  </tr>
+                <?php elseif ($result['BookingStatus'] == 'Rejected'): ?>
+                    <span class="badge bg-danger">Rejected</span>
+                <?php endif; ?>
+            </td>
+        </tr>
 
-      <tr>
-                  <th> Remark</th>
-                    <td colspan="3"><?php echo $result['AdminRemark']?></td>
-                  </tr>
+        <!-- Admin Remark -->
+        <tr>
+            <th>Remark</th>
+            <td colspan="3"><?php echo $result['AdminRemark']; ?></td>
+        </tr>
 
+        <?php $cnt++; } ?>
+    </tbody>
+</table>
 
-
-         <?php $cnt++;} ?>
-             
-                  </tbody>
-     
-                </table>
 
               </div>
 
@@ -135,12 +144,12 @@ while($result=mysqli_fetch_array($query)){
     </div>
     
 
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero1.jpg');">
+    <div class="site-section bg-image overlay" style="background-image: url('images/hero7.jpg');">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="text-white">Get In Touch With Us</h2>
-            <p class="mb-0"><a href="contact.php" class="btn btn-warning py-3 px-5 text-white">Contact Us</a></p>
+            <h2 class="text-white mb-1">Get In Touch With Us</h2>
+            <p class="mb-0"><a href="contact.php" class="btn btn-light py-3 px-5 text-black"><strong>Contact Us</strong></a></p>
           </div>
         </div>
       </div>

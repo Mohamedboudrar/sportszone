@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="dashboard.php" class="brand-link">
 
-      <span class="brand-text font-weight-light">Jet Booking System | Admin </span>
+      <span class="brand-text font-weight-light">SportsZone | Admin </span>
     </a>
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
@@ -68,20 +68,20 @@
 <li class="nav-item">
             <a href="#" class="nav-link">
                    <i class="nav-icon fas fa-table"></i>
-              <p>Jets
+              <p>Facilities
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
-                <a href="add-boat.php" class="nav-link">
+                <a href="add-zone.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add</p>
                 </a>
               </li>
           
            <li class="nav-item">
-                <a href="manage-boat.php" class="nav-link">
+                <a href="manage-zone.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Manage</p>
                 </a>

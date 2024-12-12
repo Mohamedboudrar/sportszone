@@ -6,7 +6,7 @@ include('includes/config.php');
 <html lang="en">
 
 <head>
-  <title>WeFly || Services</title>
+  <title>SportsZone || Services</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -86,21 +86,24 @@ $query = mysqli_query($con, "SELECT * FROM tblboat LIMIT $limit OFFSET $offset")
     <div class="row justify-content-center mb-5">
       <div class="col-md-7 text-center">
         
-        <h3 class="heading-92913 text-black text-center">Our Destinations</h3>
+        <h3 class="heading-92913 text-black text-center">Our Facilities</h3>
       </div>
     </div>
     <div class="row">
       <?php while ($result = mysqli_fetch_array($query)) { ?>
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="service-39381">
-            <img src="admin/images/<?php echo $result['Image']; ?>" alt="Image" width="350" height="200">
+          <img src="admin/images/<?php echo $result['Image']; ?>" alt="Image" style="width: 100%; height: 200px; object-fit: cover;" />
             <div class="p-4">
-              <h3><a href="boat-details.php?bid=<?php echo $result['ID']; ?>"><span class="icon-room mr-1 text-primary"></span> <?php echo $result['Source']; ?> &mdash; <?php echo $result['Destination']; ?></a></h3>
+              <h3><a href="zone-details.php?bid=<?php echo $result['ID']; ?>"><span class="icon-room mr-1 text-primary"></span> <?php echo $result['BoatName']; ?> </a></h3>
+              <p class="mt-1 mb-1"><?php echo $result['Description']; ?></p>
               <div class="d-flex">
+              
                 <div class="mr-auto">
-                  <a href="book-boat.php?bid=<?php echo $result['ID']; ?>" class="btn btn-primary" style="color:white;">
+                  <a href="book-zone.php?bid=<?php echo $result['ID']; ?>" class="btn btn-primary" style="color:white;">
                  Book</a>
                 </div>
+                
                 <div class="ml-auto price">
                   <span class="bg-primary">$<?php echo $result['Price']; ?></span>
                 </div>

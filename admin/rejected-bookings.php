@@ -79,9 +79,10 @@ else{
                     <th>Email Id</th>
                     <th>Mobile No</th>
                     <th>No. People</th>
-                    <th>Boking Date/Time</th>
-                     <th>Posting Date</th>
-                     <th>Status</th>
+                    <th>Boking Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -99,13 +100,14 @@ while($result=mysqli_fetch_array($query)){
                    <td><?php echo $result['PhoneNumber']?></td>
                    <td><?php echo $result['NumnerofPeople']?></td>
                   
-                    <td><?php echo $result['BookingDateFrom']?>/<?php echo $result['BookingTime']?></td>
-                    <td><?php echo $result['postingDate']?></td>
+                   <td><?php echo $result['BookingDate']?></td>
+                    <td><?php echo $result['TimeFrom'] ?> </td>
+                    <td><?php echo $result['TimeTo'] ?> </td>
                     <td><?php if($result['BookingStatus']==''): ?>
 <span class="badge bg-warning text-dark">Not Processed Yet</span>
                   <?php elseif($result['BookingStatus']=='Accepted'): ?>
                     <span class="badge bg-success">Accepted</span>
-                    <?php elseif($result['Rejected']=='Rejected'): ?>
+                    <?php elseif($result['BookingStatus']=='Rejected'): ?>
                       <span class="badge bg-danger">Rejected</span>
 
                     <?php endif;?></td>

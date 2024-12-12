@@ -30,8 +30,8 @@ if(strlen($_SESSION['aid']) == 0) {
 
         // Check if the query was successful
         if($result) {
-            echo "<script>alert('Boat image updated successfully.');</script>";
-            echo "<script type='text/javascript'> document.location = 'manage-boat.php'; </script>";
+            echo "<script>alert('Zone image updated successfully.');</script>";
+            echo "<script type='text/javascript'> document.location = 'manage-zone.php'; </script>";
         } else {
             echo "<script>alert('Something went wrong. Please try again.');</script>";
         }
@@ -45,7 +45,7 @@ if(strlen($_SESSION['aid']) == 0) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WeFly  | Update Boat</title>
+  <title>SportsZone</title>
 
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 

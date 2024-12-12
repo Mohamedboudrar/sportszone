@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>WeFly || Contact</title>
+  <title>SportsZone || Contact</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,16 +37,12 @@
 
    <?php include_once("includes/navbar.php");?>
 
-    <div class="intro-section site-blocks-cover innerpage" style="background-image: url('images/contact.jpg');">
+    <div class="intro-section site-blocks-cover innerpage" style="background-image: url('images/hero4.jpg');">
       <div class="container">
         <div class="row align-items-center text-center border">
           <div class="col-lg-12 mt-5" data-aos="fade-up">
             <h1>Get In Touch</h1>
-            <p class="text-white text-center">
-              <a href="index.php">Home</a>
-              <span class="mx-2">/</span>
-              <span>Contact Us</span>
-            </p>
+            
           </div>
         </div>
       </div>
@@ -89,7 +85,7 @@
       </div>
 
       <div class="col-lg-12 text-center">
-        <button type="submit" class="btn btn-primary px-5">Send</button>
+        <button type="submit" class="btn btn-primary px-5" id="sendMessageBtn">Send</button>
       </div>
     </div>
   </div>
@@ -126,6 +122,46 @@
 
 
   <script src="js/main.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("QYOgbxA4W7aXK7Scd"); // Your EmailJS User ID here
+  })();
+
+  document.getElementById("sendMessageBtn").addEventListener("click", function() {
+  // Get user input values
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const message = document.getElementById("message").value;
+
+  if (name && email && phone && message) {
+    const templateParams = {
+      user_name: name,
+      user_email: email,
+      user_phone: phone,
+      message: message
+    };
+
+    // Log the params to verify
+    console.log("Sending email with params:", templateParams);
+
+    // Send email using EmailJS service
+    emailjs.send("service_xoqvviu", "template_9zwa5ca", templateParams)
+      .then(function(response) {
+        console.log('Success:', response);
+        alert("Your message has been sent successfully!");
+        location.reload();
+      }, function(error) {
+        console.log('Error:', error);
+        alert("Failed to send your message. Please try again.");
+      });
+  } else {
+    alert("Please fill in all fields.");
+  }
+});
+
+</script>
 
 </body>
 

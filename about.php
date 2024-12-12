@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>WeFly || About</title>
+  <title>SportsZone || About</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,11 +37,11 @@
     
     
 
-      <div class="intro-section" style="background-image: url('images/hero2.jpg');">
+      <div class="intro-section" style="background-image: url('images/hero4.jpg');">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 mx-auto text-center" data-aos="fade-up">
-              <h1>About WeFly</h1>
+              <h1>About SportsZone</h1>
         
               <p><a href="contact.php" class="btn btn-primary py-3 px-5">Contact</a></p>
             </div>
@@ -55,12 +55,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <img src="images/hero3.jpg" alt="Image" class="img-fluid">
+            <img src="images/hero6.jpg" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6">
             <span class="text-serif text-primary">About Us</span>
             <h3 class="heading-92913 text-black">Welcome To Our Website</h3>
-            <p>Welcome to WeFly, your trusted partner in luxury and convenience. We specialize in providing seamless private jet reservation services tailored to your unique needs. Whether for business or leisure, we ensure your journey is comfortable, secure, and tailored to perfection.</p>
+            <p>Welcome to SportsZone, your ultimate partner for all things action and recreation! We specialize in offering a streamlined and efficient platform for reserving sports facilities that cater to your unique requirements. Whether you're planning a practice session, organizing a competitive tournament, or simply looking for a space to enjoy leisure activities, we've got you covered. <br><br>
+              At SportsZone, we prioritize convenience and ease of access, ensuring your booking experience is hassle-free from start to finish. Our tailored services guarantee that your chosen facility is ready and perfectly equipped for your needs, allowing you to focus on what matters most—your game. Trust us to take the stress out of planning and make every moment of your sports experience well-organized, enjoyable, and memorable.</p>
             <p>Fly with us, and let every mile reflect your aspirations.</p>       
           </div>
         </div>

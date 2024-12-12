@@ -24,7 +24,7 @@ if(isset($_POST['login']))
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WeFly | Login</title>
+  <title>SportsZone | Login</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -40,7 +40,7 @@ if(isset($_POST['login']))
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="index.php" class="h1"><b>Admin</b> |  Jet Booking</a>
+      <a href="index.php" class="h1"><b>Admin</b> |  SportsZone</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>

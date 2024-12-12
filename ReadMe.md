@@ -45,7 +45,7 @@ git clone https://github.com/your-username/private-jets-reservation.git
 You should now see the main landing page of the Private Jets Reservation System.
 You can start browsing the available jets, making reservations, and managing your bookings.
 Screenshots
-Below are some screenshots of the project in action. You can add your own screenshots here.
+Below are some screenshots of the project in action. 
 
 Screenshot 1
 
